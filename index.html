@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread operator - exercise</title>
+</head>
+<body>
+    
+    <script>
+        function createComputer(cpu, gpu, ram, disc) {
+            return {
+                cpu: cpu,
+                gpu: gpu,
+                ram: ram,
+                disc: disc
+            }
+        }
+
+        let computer001 = createComputer("i7", "Nvidia1000", "32 GB", "512 GB");
+        console.log(computer001);
+
+        function createLaptop(obj) {
+            return {
+                ...obj,
+                type: "laptop",
+                weight: 2.5
+            }
+        }
+
+        let computer002 = createComputer("i9","NVidia2000","64 GB","1 TB");
+        let laptop001 = createLaptop(computer002);
+        console.log(laptop001);
+
+        // spread operator in arrays
+        const firstArray = [1,2,3];
+        const secondArray = [4,5,6];
+        const combinedArray = [...firstArray, ...secondArray];
+        const copiedArray = [...firstArray];
+        copiedArray[3] = 9;
+        console.log(firstArray);
+        console.log(secondArray);
+        console.log(combinedArray);
+        console.log(copiedArray);
+
+</script>
+</body>
+</html>
